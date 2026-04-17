@@ -9,7 +9,6 @@ import java.util.logging.Logger;
 public class VerticleN extends AbstractVerticle {
 
 
-
   @Override
   public void start(Promise<Void> startPromise) throws Exception {
     System.out.println("Start " + getClass().getName() + " With config " + config().toString());
