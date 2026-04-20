@@ -3,11 +3,11 @@ package com.example.starter;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
 import io.vertx.core.Vertx;
-import org.apache.logging.log4j.Logger;
-import io.vertx.core.impl.logging.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MainVerticle extends AbstractVerticle {
-  private static final Logger LOG = (Logger) LoggerFactory.getLogger(MainVerticle.class);
+  private static final Logger LOG =  LoggerFactory.getLogger(MainVerticle.class);
 
 
   public static void main(String[] args) {
