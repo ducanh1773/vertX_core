@@ -1,9 +1,6 @@
 package com.example.starter.eventloop;
 
-import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Promise;
-import io.vertx.core.Vertx;
-import io.vertx.core.VertxOptions;
+import io.vertx.core.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,8 +19,9 @@ public class EventLoopExample extends AbstractVerticle {
         .setMaxEventLoopExecuteTimeUnit(TimeUnit.MILLISECONDS)
         .setBlockedThreadCheckInterval(1)
         .setBlockedThreadCheckIntervalUnit(TimeUnit.SECONDS)
+
     );
-    vertx.deployVerticle(new EventLoopExample());
+    vertx.deployVerticle(EventLoopExample.class.getName() , new DeploymentOptions());
   }
 
   @Override
