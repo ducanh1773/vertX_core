@@ -1,6 +1,7 @@
 package com.example.starter.worker;
 
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Promise;
 import io.vertx.core.Vertx;
 import org.slf4j.Logger;
@@ -20,6 +21,11 @@ public class WorkerExample extends AbstractVerticle {
 
   @Override
   public void start(Promise<Void> startPromise) throws Exception {
+    vertx.deployVerticle(new WorkerVertical(),
+      new DeploymentOptions()
+        .setWorker(true)
+        .setWorkerPoolSize(1)
+        .setWorkerPoolName("my-worker-vertical"));
     startPromise.complete();
     vertx.executeBlocking(event -> {
         LOG.debug("Excuting blocking code");
