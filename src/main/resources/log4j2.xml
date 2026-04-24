@@ -6,7 +6,10 @@
     </Console>
   </Appenders>
   <Loggers>
-    <Root level="debug">
+
+    <Logger name="com.example.starter.eventloop.EventLoopExample" level="DEBUG"/>
+
+    <Root level="INFO">
       <AppenderRef ref="Console"/>
     </Root>
   </Loggers>

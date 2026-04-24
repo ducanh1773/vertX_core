@@ -11,7 +11,6 @@ import java.util.UUID;
 public class MainVerticle extends AbstractVerticle {
 
 
-
   public static void main(String[] args) {
     final Vertx vertx = Vertx.vertx();
     vertx.deployVerticle(new MainVerticle());
